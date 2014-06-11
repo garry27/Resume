@@ -1,0 +1,21 @@
+application: garryorgks
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: no
+
+
+handlers:
+- url: /(.*\.(gif|png|jpg|ico|js|css|otf|eot|scg|ttf|woff|less|scss|pdf))
+  static_files: \1
+  upload: (.*\.(gif|png|jpg|ico|js|css|otf|eot|scg|ttf|woff|less|scss|pdf))
+
+- url: /sendmail.py
+  script: sendmail.py
+
+- url: .*
+  script: main.py
+
+
+
+
